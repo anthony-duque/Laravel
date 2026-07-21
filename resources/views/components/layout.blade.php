@@ -15,43 +15,43 @@
 
     <nav>
 
-        <x-navlink onclick="window.location.href='/stage'"
-                  class="{{ request()->is('stage') ? 'btn btn-light fw-bold fst-italic' : 'btn btn-light' }}">
+        <x-navlink onclick="window.location.href='/stage'" :active="request()->is('stage')"
+                    base-class="btn btn-light">
             Stage
         </x-navlink>
         
-        <x-navlink onclick="window.location.href='/production'"
-                  class="{{ request()->is('production') ? 'btn btn-secondary fw-bold fst-italic' : 'btn btn-secondary' }}">
+        <x-navlink onclick="window.location.href='/production'" :active="request()->is('production')"
+                  base-class="btn btn-secondary">
             Production
         </x-navlink>
         
-        <x-navlink onclick="window.location.href='/deliveries'" 
-                class="{{ request()->is('deliveries') ? 'btn btn-success fw-bold fst-italic' : 'btn btn-success' }}">
+        <x-navlink onclick="window.location.href='/deliveries'" :active="request()->is('deliveries')"
+                base-class="btn btn-success">
             Deliveries
         </x-navlink>
         
-        <x-navlink onclick="window.location.href='/part_search'" 
-                class="{{ request()->is('part_search') ? 'btn btn-danger fw-bold fst-italic' : 'btn btn-danger' }}">
+        <x-navlink onclick="window.location.href='/part_search'" :active="request()->is('part_search')"
+                base-class="btn btn-danger">
             Part Search
         </x-navlink>
 
-        <x-navlink onclick="window.location.href='/materials'" 
-                class="{{ request()->is('materials') ? 'btn btn-warning fw-bold fst-italic' : 'btn btn-warning' }}">
+        <x-navlink onclick="window.location.href='/materials'" :active="request()->is('materials')"
+                base-class="btn btn-warning">
             Materials
         </x-navlink>
 
-        <x-navlink onclick="window.location.href='/follow-up'" 
-                class="{{ request()->is('follow-up') ? 'btn btn-info fw-bold fst-italic' : 'btn btn-info' }}">
+        <x-navlink onclick="window.location.href='/follow-up'" :active="request()->is('follow-up')"
+                base-class="btn btn-info">
             Follow-up
         </x-navlink>
 
-        <x-navlink onclick="window.location.href='/return_forms'" 
-                class="{{ request()->is('return_forms') ? 'btn btn-light fw-bold fst-italic' : 'btn btn-light' }}">
+        <x-navlink onclick="window.location.href='/return_forms'" :active="request()->is('return_forms')"
+                base-class="btn btn-light">
             Return Forms
         </x-navlink>
 
-        <x-navlink onclick="window.location.href='/vendors'" 
-                class="{{ request()->is('vendors') ? 'btn btn-dark fw-bold fst-italic' : 'btn btn-dark' }}">
+        <x-navlink onclick="window.location.href='/vendors'" :active="request()->is('vendors')"
+                base-class="btn btn-dark">
             Vendors
         </x-navlink>
     </nav>
