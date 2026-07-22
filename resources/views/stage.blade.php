@@ -2,5 +2,9 @@
 
 @section('content')
     <h1>Stage</h1>
-    <p>This is the stage page.</p>
+
+    @foreach($stages as $stage)
+        <p>({{ $stage["order_no"] }}) - {{ $stage["description"] }}</p>
+    @endforeach
+
 @endsection

@@ -1,13 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Stage;
+
+Route::get('/stage/{id}', function($id){
+    return Stage::get($id);
+});
 
 Route::get('/', function(){
     return view('stage');
 });
 
 Route::get('/stage', function(){
-    return view('stage');
+    return view('stage', ['stages' => Stage::all()]);
 });
 
 Route::get('/production', function(){
