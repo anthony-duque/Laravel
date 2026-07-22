@@ -3,9 +3,12 @@
     namespace App\Models;
 
     use Illuminate\Support\Arr;
+    use Illuminate\Database\Eloquent\Model;
 
-    class Stage
+    class Stage extends Model
     {
+        protected $table = 'stage_headings';
+        /*
         public static function all() : array
         {
             $stages = [];
@@ -38,6 +41,7 @@
             }
 
         }   // find()
+           */
     }
 
 ?>

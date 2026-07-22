@@ -1,10 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Stage;
+
+//  Table Models
+
+use App\Models\CarStage;
+use App\Models\Company;
+use App\Models\Department;
+use App\Models\Employee;
+use App\Models\ExtractFileDump;
+use App\Models\LocationId;
+use App\Models\Material;
+use App\Models\MaterialType;
+use App\Models\PartsReturns;
+use App\Models\Repair;
+use App\Models\StageHeading;
+use App\Models\TechCarPriority;
+use App\Models\Vendor;
+
 
 Route::get('/stage/{id}', function($id){
-    return Stage::get($id);
+    return StageHeading::find($id);
 });
 
 Route::get('/', function(){
@@ -12,7 +28,7 @@ Route::get('/', function(){
 });
 
 Route::get('/stage', function(){
-    return view('stage', ['stages' => Stage::all()]);
+    return view('stage', ['stages' => StageHeading::all()]);
 });
 
 Route::get('/production', function(){
