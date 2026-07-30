@@ -10,21 +10,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        DB::unprepared("CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_Update_Location_IDs`()
+        DB::unprepared("CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_Update_shops`()
 BEGIN
 
-	INSERT INTO location_ids
+	INSERT INTO shops
 		(location)
 	SELECT DISTINCT r.location
-	FROM repairs r LEFT JOIN location_ids li
+	FROM repairs r LEFT JOIN shops li
 		ON r.location = li.location
 	WHERE li.id IS NULL;
 
-	UPDATE repairs r INNER JOIN location_ids li
+	UPDATE repairs r INNER JOIN shops li
 	SET r.loc_id = li.id
 	WHERE r.location = li.location;
 
-	UPDATE parts_status pse INNER JOIN location_ids li
+	UPDATE parts_status pse INNER JOIN shops li
 	SET pse.loc_id = li.id
 	WHERE pse.location = li.location;
 
@@ -76,7 +76,7 @@ BEGIN
 			AND vehicle_in < DATE_ADD(CURDATE(), INTERVAL 1 DAY)
 	ORDER BY r.ro_num;
 
-	UPDATE scheduled_in_vin siv INNER JOIN location_ids li
+	UPDATE scheduled_in_vin siv INNER JOIN shops li
 	SET siv.Loc_ID = li.id
 	WHERE UPPER(siv.location) = UPPER(li.location);
 
@@ -88,6 +88,6 @@ END");
      */
     public function down(): void
     {
-        DB::unprepared("DROP PROCEDURE IF EXISTS sp_Update_Location_IDs");
+        DB::unprepared("DROP PROCEDURE IF EXISTS sp_Update_shops");
     }
 };

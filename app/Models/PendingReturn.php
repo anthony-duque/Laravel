@@ -13,12 +13,13 @@ use Illuminate\Database\Eloquent\Model;
  * Class PendingReturn
  * 
  * @property int $id
- * @property int $RO
- * @property string|null $Owner
- * @property string|null $Vehicle
- * @property string $Vendor
- * @property string $Return_Number
- * @property Carbon|null $Pickup_Date
+ * @property string $ro_number
+ * @property string|null $owner
+ * @property string|null $vehicle
+ * @property string $vendor
+ * @property string $return_number
+ * @property Carbon|null $pickup_date
+ * @property int|null $shop_id
  *
  * @package App\Models
  */
@@ -28,16 +29,17 @@ class PendingReturn extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'RO' => 'int',
-		'Pickup_Date' => 'datetime'
+		'pickup_date' => 'datetime',
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
-		'RO',
-		'Owner',
-		'Vehicle',
-		'Vendor',
-		'Return_Number',
-		'Pickup_Date'
+		'ro_number',
+		'owner',
+		'vehicle',
+		'vendor',
+		'return_number',
+		'pickup_date',
+		'shop_id'
 	];
 }

@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cell_email_lookups', function (Blueprint $table) {
-            $table->comment('A lookup table that lists the equivalent email address of a cell service.');
-            $table->increments('id');
-            $table->string('cell_name', 12);
-            $table->string('email_format', 60);
+        Schema::create('departments', function (Blueprint $table) {
+            $table->comment('Department Lookup Table');
+            $table->tinyIncrements('id');
+            $table->string('department_code', 15);
+            $table->string('description', 30)->nullable();
         });
     }
 
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cell_email_lookups');
+        Schema::dropIfExists('departments');
     }
 };

@@ -20,13 +20,13 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $state
  * @property string|null $zipcode
  * @property string|null $email
- * @property int $location_id
- * @property string|null $shop_location
+ * @property int $shop_id
+ * @property string|null $shop_name
  * @property bool|null $opt_oem
  * @property bool|null $aftermarket
  * @property bool|null $preferred
  * @property bool|null $electronic
- * @property int|null $vendor_ID
+ * @property int|null $vendor_id
  *
  * @package App\Models
  */
@@ -37,12 +37,12 @@ class Vendor extends Model
 
 	protected $casts = [
 		'oem' => 'bool',
-		'location_id' => 'int',
+		'shop_id' => 'int',
 		'opt_oem' => 'bool',
 		'aftermarket' => 'bool',
 		'preferred' => 'bool',
 		'electronic' => 'bool',
-		'vendor_ID' => 'int'
+		'vendor_id' => 'int'
 	];
 
 	protected $fillable = [
@@ -54,12 +54,12 @@ class Vendor extends Model
 		'state',
 		'zipcode',
 		'email',
-		'location_id',
-		'shop_location',
+		'shop_id',
+		'shop_name',
 		'opt_oem',
 		'aftermarket',
 		'preferred',
 		'electronic',
-		'vendor_ID'
+		'vendor_id'
 	];
 }

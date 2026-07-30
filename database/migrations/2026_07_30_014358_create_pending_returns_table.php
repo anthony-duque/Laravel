@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('pending_returns', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedSmallInteger('RO');
-            $table->string('Owner', 50)->nullable();
-            $table->string('Vehicle', 75)->nullable();
-            $table->string('Vendor', 50);
-            $table->string('Return_Number', 12);
-            $table->date('Pickup_Date')->nullable()->comment('Vendor Pickup Date');
+            $table->string('ro_number', 15);
+            $table->string('owner', 50)->nullable();
+            $table->string('vehicle', 75)->nullable();
+            $table->string('vendor', 50);
+            $table->string('return_number', 12);
+            $table->date('pickup_date')->nullable()->comment('Vendor Pickup Date');
+            $table->unsignedSmallInteger('shop_id')->nullable();
         });
     }
 

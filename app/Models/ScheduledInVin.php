@@ -13,15 +13,15 @@ use Illuminate\Database\Eloquent\Model;
  * Class ScheduledInVin
  * 
  * @property int $id
- * @property Carbon|null $scheduled_in
- * @property int $ro_num
+ * @property Carbon|null $scheduled_in_date
+ * @property string $ro_num
  * @property string|null $vin
  * @property float|null $ro_hours
  * @property float|null $assigned_hours
- * @property float|null $estimate_amt
+ * @property float|null $estimate_amount
  * @property bool|null $total_loss
- * @property string|null $location
- * @property int|null $loc_id
+ * @property string|null $shop_name
+ * @property int|null $shop_id
  *
  * @package App\Models
  */
@@ -31,24 +31,23 @@ class ScheduledInVin extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'scheduled_in' => 'datetime',
-		'ro_num' => 'int',
+		'scheduled_in_date' => 'datetime',
 		'ro_hours' => 'float',
 		'assigned_hours' => 'float',
-		'estimate_amt' => 'float',
+		'estimate_amount' => 'float',
 		'total_loss' => 'bool',
-		'loc_id' => 'int'
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
-		'scheduled_in',
+		'scheduled_in_date',
 		'ro_num',
 		'vin',
 		'ro_hours',
 		'assigned_hours',
-		'estimate_amt',
+		'estimate_amount',
 		'total_loss',
-		'location',
-		'loc_id'
+		'shop_name',
+		'shop_id'
 	];
 }

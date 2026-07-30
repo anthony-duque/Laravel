@@ -12,9 +12,9 @@ use Illuminate\Database\Eloquent\Model;
  * Class CarStage
  * 
  * @property int $id
- * @property int $ro_num
- * @property int $loc_id
- * @property int|null $stage_id
+ * @property string $ro_number
+ * @property int $shop_id
+ * @property int $sequence_number
  *
  * @package App\Models
  */
@@ -24,14 +24,13 @@ class CarStage extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'ro_num' => 'int',
-		'loc_id' => 'int',
-		'stage_id' => 'int'
+		'shop_id' => 'int',
+		'sequence_number' => 'int'
 	];
 
 	protected $fillable = [
-		'ro_num',
-		'loc_id',
-		'stage_id'
+		'ro_number',
+		'shop_id',
+		'sequence_number'
 	];
 }

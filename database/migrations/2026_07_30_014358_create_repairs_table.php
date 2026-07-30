@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('repairs', function (Blueprint $table) {
             $table->comment('List of active vehicles (pre-ordered and cars in shop).');
-            $table->integer('id', true);
-            $table->string('ro_num', 15);
+            $table->increments('id');
+            $table->string('ro_number', 15);
             $table->string('owner', 50);
             $table->string('vehicle', 100);
             $table->dateTime('vehicle_in')->nullable();
@@ -25,8 +25,7 @@ return new class extends Migration
             $table->string('vehicle_color', 30)->nullable();
             $table->string('license_plate', 12)->nullable();
             $table->dateTime('scheduled_out')->nullable();
-            $table->string('location', 50)->nullable();
-            $table->unsignedTinyInteger('loc_id')->nullable()->default(0)->comment('Location ID');
+            $table->unsignedSmallInteger('shop_id')->nullable()->default(0)->comment('Location ID');
             $table->string('insurance', 100)->nullable();
             $table->string('vin', 20)->nullable();
         });

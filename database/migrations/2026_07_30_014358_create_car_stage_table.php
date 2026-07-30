@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('departments', function (Blueprint $table) {
-            $table->comment('Department Lookup Table');
+        Schema::create('car_stage', function (Blueprint $table) {
+            $table->comment('Tracks the production stage of cars.');
             $table->increments('id');
-            $table->string('dept_code', 15);
-            $table->string('description', 30)->nullable();
+            $table->string('ro_number', 15);
+            $table->unsignedSmallInteger('shop_id');
+            $table->unsignedTinyInteger('sequence_number');
         });
     }
 
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('departments');
+        Schema::dropIfExists('car_stage');
     }
 };

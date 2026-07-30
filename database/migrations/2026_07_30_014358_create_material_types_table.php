@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('material_types', function (Blueprint $table) {
             $table->comment('Material Types Lookup Table');
-            $table->increments('id');
-            $table->string('code', 10)->unique('code');
+            $table->smallIncrements('id');
+            $table->string('material_type', 12)->unique('code');
             $table->string('description', 100)->nullable();
         });
     }

@@ -16,19 +16,18 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $part_number
  * @property string|null $part_description
  * @property string|null $part_type
- * @property int|null $ro_qty
+ * @property int|null $ro_quantity
  * @property string|null $vendor_name
  * @property string|null $po_number
- * @property int|null $ordered_qty
- * @property Carbon|null $expected_delivery
- * @property int|null $received_qty
- * @property int|null $returned_qty
- * @property int|null $line
- * @property string|null $ro_num
+ * @property int|null $ordered_quantity
+ * @property Carbon|null $expected_delivery_date
+ * @property int|null $received_quantity
+ * @property int|null $returned_quantity
+ * @property int|null $line_number
+ * @property string|null $ro_number
  * @property Carbon|null $order_date
  * @property Carbon|null $invoice_date
- * @property string|null $location
- * @property int|null $loc_id
+ * @property int|null $shop_id
  * @property string|null $part_status
  * @property string|null $repair_code
  * @property float|null $part_price
@@ -41,15 +40,15 @@ class PartsStatus extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'ro_qty' => 'int',
-		'ordered_qty' => 'int',
-		'expected_delivery' => 'datetime',
-		'received_qty' => 'int',
-		'returned_qty' => 'int',
-		'line' => 'int',
+		'ro_quantity' => 'int',
+		'ordered_quantity' => 'int',
+		'expected_delivery_date' => 'datetime',
+		'received_quantity' => 'int',
+		'returned_quantity' => 'int',
+		'line_number' => 'int',
 		'order_date' => 'datetime',
 		'invoice_date' => 'datetime',
-		'loc_id' => 'int',
+		'shop_id' => 'int',
 		'part_price' => 'float'
 	];
 
@@ -57,19 +56,18 @@ class PartsStatus extends Model
 		'part_number',
 		'part_description',
 		'part_type',
-		'ro_qty',
+		'ro_quantity',
 		'vendor_name',
 		'po_number',
-		'ordered_qty',
-		'expected_delivery',
-		'received_qty',
-		'returned_qty',
-		'line',
-		'ro_num',
+		'ordered_quantity',
+		'expected_delivery_date',
+		'received_quantity',
+		'returned_quantity',
+		'line_number',
+		'ro_number',
 		'order_date',
 		'invoice_date',
-		'location',
-		'loc_id',
+		'shop_id',
 		'part_status',
 		'repair_code',
 		'part_price'

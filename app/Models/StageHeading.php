@@ -13,8 +13,8 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id
  * @property string $description
- * @property int $order_no
- * @property int $loc_id
+ * @property int $sequence_number
+ * @property int $shop_id
  *
  * @package App\Models
  */
@@ -24,13 +24,13 @@ class StageHeading extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'order_no' => 'int',
-		'loc_id' => 'int'
+		'sequence_number' => 'int',
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
 		'description',
-		'order_no',
-		'loc_id'
+		'sequence_number',
+		'shop_id'
 	];
 }

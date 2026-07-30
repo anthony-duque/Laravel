@@ -13,10 +13,10 @@ use Illuminate\Database\Eloquent\Model;
  * 
  * @property int $id
  * @property string $technician
- * @property int $ro_num
+ * @property string $ro_number
  * @property int $priority
- * @property int $location_id
- * @property string $dept_code
+ * @property int $shop_id
+ * @property string $department_code
  *
  * @package App\Models
  */
@@ -26,16 +26,15 @@ class TechCarPriority extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'ro_num' => 'int',
 		'priority' => 'int',
-		'location_id' => 'int'
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
 		'technician',
-		'ro_num',
+		'ro_number',
 		'priority',
-		'location_id',
-		'dept_code'
+		'shop_id',
+		'department_code'
 	];
 }

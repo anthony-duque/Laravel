@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class Repair
  * 
  * @property int $id
- * @property string $ro_num
+ * @property string $ro_number
  * @property string $owner
  * @property string $vehicle
  * @property Carbon|null $vehicle_in
@@ -24,8 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $vehicle_color
  * @property string|null $license_plate
  * @property Carbon|null $scheduled_out
- * @property string|null $location
- * @property int|null $loc_id
+ * @property int|null $shop_id
  * @property string|null $insurance
  * @property string|null $vin
  *
@@ -40,11 +39,11 @@ class Repair extends Model
 		'vehicle_in' => 'datetime',
 		'parts_received' => 'float',
 		'scheduled_out' => 'datetime',
-		'loc_id' => 'int'
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
-		'ro_num',
+		'ro_number',
 		'owner',
 		'vehicle',
 		'vehicle_in',
@@ -55,8 +54,7 @@ class Repair extends Model
 		'vehicle_color',
 		'license_plate',
 		'scheduled_out',
-		'location',
-		'loc_id',
+		'shop_id',
 		'insurance',
 		'vin'
 	];

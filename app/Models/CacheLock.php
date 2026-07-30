@@ -9,26 +9,27 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class CellEmailLookup
+ * Class CacheLock
  * 
- * @property int $id
- * @property string $cell_name
- * @property string $email_format
+ * @property string $key
+ * @property string $owner
+ * @property int $expiration
  *
  * @package App\Models
  */
-class CellEmailLookup extends Model
+class CacheLock extends Model
 {
-	protected $table = 'cell_email_lookups';
+	protected $table = 'cache_locks';
+	protected $primaryKey = 'key';
 	public $incrementing = false;
 	public $timestamps = false;
 
 	protected $casts = [
-		'id' => 'int'
+		'expiration' => 'int'
 	];
 
 	protected $fillable = [
-		'cell_name',
-		'email_format'
+		'owner',
+		'expiration'
 	];
 }

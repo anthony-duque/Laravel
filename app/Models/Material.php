@@ -15,11 +15,10 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $part_number
  * @property string|null $description
  * @property string|null $unit
- * @property string|null $type
+ * @property string|null $material_type
  * @property int|null $reorder_quantity
  * @property string|null $brand
  * 
- * @property MaterialType|null $material_type
  *
  * @package App\Models
  */
@@ -36,13 +35,13 @@ class Material extends Model
 		'part_number',
 		'description',
 		'unit',
-		'type',
+		'material_type',
 		'reorder_quantity',
 		'brand'
 	];
 
 	public function material_type()
 	{
-		return $this->belongsTo(MaterialType::class, 'type', 'code');
+		return $this->belongsTo(MaterialType::class, 'material_type', 'material_type');
 	}
 }

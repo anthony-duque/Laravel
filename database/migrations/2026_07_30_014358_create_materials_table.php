@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('part_number', 15)->unique('code');
             $table->string('description', 40)->nullable();
             $table->string('unit', 10)->nullable();
-            $table->string('type', 10)->nullable()->index('type');
+            $table->string('material_type', 12)->nullable()->index('type');
             $table->tinyInteger('reorder_quantity')->nullable();
             $table->string('brand', 30)->nullable();
         });

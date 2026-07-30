@@ -22,13 +22,13 @@ return new class extends Migration
             $table->string('state', 2)->nullable();
             $table->string('zipcode', 10)->nullable();
             $table->string('email', 35)->nullable();
-            $table->unsignedSmallInteger('location_id')->default(0)->comment('Shop ID depending on Location table.');
-            $table->string('shop_location', 50)->nullable()->comment('Shop Location');
+            $table->unsignedSmallInteger('shop_id')->default(0)->comment('Shop ID depending on Location table.');
+            $table->string('shop_name', 60)->nullable()->comment('Shop Location');
             $table->boolean('opt_oem')->nullable()->default(false)->comment('Does vendor sell Opt OEM parts?');
             $table->boolean('aftermarket')->nullable()->comment('Does vendor sell aftermarket parts?');
             $table->boolean('preferred')->nullable()->default(false)->comment('Is this a preferred vendor?');
             $table->boolean('electronic')->nullable()->default(false)->comment('Can we order electronically to this vendor?');
-            $table->unsignedMediumInteger('vendor_ID')->nullable()->default(0)->comment('Vendor ID assigned by CCC One');
+            $table->unsignedInteger('vendor_id')->nullable()->default(0)->comment('Vendor ID assigned by CCC One');
         });
     }
 

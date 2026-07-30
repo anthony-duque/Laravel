@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('adhoc_table', function (Blueprint $table) {
             $table->comment('A special table that will hold values that does not belong to any of the other tables.');
             $table->increments('id');
-            $table->string('name', 15);
+            $table->string('name', 20);
             $table->string('value', 100)->nullable();
             $table->string('description', 50)->nullable();
         });

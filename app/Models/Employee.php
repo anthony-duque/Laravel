@@ -17,11 +17,11 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $last_name
  * @property int|null $cell_number
  * @property string|null $cell_service
- * @property string|null $dept_code
+ * @property string|null $department_code
  * @property string|null $email
  * @property bool|null $notify
  * @property string|null $notif_preference
- * @property int $loc_id
+ * @property int $shop_id
  *
  * @package App\Models
  */
@@ -33,7 +33,7 @@ class Employee extends Model
 	protected $casts = [
 		'cell_number' => 'int',
 		'notify' => 'bool',
-		'loc_id' => 'int'
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
@@ -42,10 +42,10 @@ class Employee extends Model
 		'last_name',
 		'cell_number',
 		'cell_service',
-		'dept_code',
+		'department_code',
 		'email',
 		'notify',
 		'notif_preference',
-		'loc_id'
+		'shop_id'
 	];
 }

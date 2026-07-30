@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class MaterialType
  * 
  * @property int $id
- * @property string $code
+ * @property string $material_type
  * @property string|null $description
  * 
  * @property Collection|Material[] $materials
@@ -26,12 +26,12 @@ class MaterialType extends Model
 	public $timestamps = false;
 
 	protected $fillable = [
-		'code',
+		'material_type',
 		'description'
 	];
 
 	public function materials()
 	{
-		return $this->hasMany(Material::class, 'type', 'code');
+		return $this->hasMany(Material::class, 'material_type', 'material_type');
 	}
 }

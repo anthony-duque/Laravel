@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('stage_headings', function (Blueprint $table) {
             $table->comment('Production Stage Headings for each location.');
-            $table->smallIncrements('id');
+            $table->mediumIncrements('id');
             $table->string('description', 50);
-            $table->tinyInteger('order_no');
-            $table->unsignedTinyInteger('loc_id')->comment('Location ID');
+            $table->tinyInteger('sequence_number');
+            $table->unsignedSmallInteger('shop_id')->comment('Location ID');
         });
     }
 

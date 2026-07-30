@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('tech_car_priority', function (Blueprint $table) {
             $table->comment('Tracks the priority of cars assigned to each technician.');
             $table->increments('id');
-            $table->char('technician', 15);
-            $table->unsignedInteger('ro_num');
+            $table->char('technician', 20);
+            $table->string('ro_number', 15);
             $table->unsignedTinyInteger('priority');
-            $table->unsignedTinyInteger('location_id');
-            $table->string('dept_code', 12);
+            $table->unsignedSmallInteger('shop_id');
+            $table->string('department_code', 12);
         });
     }
 

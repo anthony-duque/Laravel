@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * Class PartsReturn
  * 
  * @property int $id
- * @property int $ro_num
+ * @property string $ro_number
  * @property Carbon $return_date
  * @property Carbon|null $vendor_pickup_date
  * @property string $part_number
@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $invoice_number
  * @property string|null $reason
  * @property string $vendor_name
+ * @property int|null $shop_id
  *
  * @package App\Models
  */
@@ -32,14 +33,14 @@ class PartsReturn extends Model
 	public $timestamps = false;
 
 	protected $casts = [
-		'ro_num' => 'int',
 		'return_date' => 'datetime',
 		'vendor_pickup_date' => 'datetime',
-		'amount' => 'float'
+		'amount' => 'float',
+		'shop_id' => 'int'
 	];
 
 	protected $fillable = [
-		'ro_num',
+		'ro_number',
 		'return_date',
 		'vendor_pickup_date',
 		'part_number',
@@ -48,6 +49,7 @@ class PartsReturn extends Model
 		'amount',
 		'invoice_number',
 		'reason',
-		'vendor_name'
+		'vendor_name',
+		'shop_id'
 	];
 }
