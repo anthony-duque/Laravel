@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Company
- * 
+ *
  * @property int $id
  * @property string $company_code
  * @property string|null $address
@@ -49,4 +50,9 @@ class Company extends Model
 		'email',
 		'account_signup_date'
 	];
+
+    public function shops(): HasMany
+    {
+        return $this->hasMany(Shop::class);
+    }
 }

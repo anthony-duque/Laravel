@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Shop
- * 
+ *
  * @property int $id
  * @property string|null $name
  * @property Carbon|null $last_data_upload
@@ -34,4 +35,9 @@ class Shop extends Model
 		'last_data_upload',
 		'company_id'
 	];
+
+    public function company(): BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 }
