@@ -7,10 +7,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Vendor
- * 
+ *
  * @property int $id
  * @property string $name
  * @property bool|null $oem
@@ -62,4 +63,9 @@ class Vendor extends Model
 		'electronic',
 		'vendor_id'
 	];
+
+    public function shop() : BelongsTo
+    {
+        return $this->belongsTo(Shop::class);
+    }
 }
