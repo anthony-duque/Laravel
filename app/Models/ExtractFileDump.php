@@ -8,10 +8,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class ExtractFileDump
- * 
+ *
  * @property int $id
  * @property string $shop_code
  * @property string $shop_name
@@ -101,4 +102,14 @@ class ExtractFileDump extends Model
 		'company_id',
 		'shop_id'
 	];
+
+    public function shop() : BelongsTo
+    {
+        return $this->belongsTo(Shop::class);
+    }
+
+    public function company() : BelongsTo
+    {
+        return $this->belongsTo(Company::class);
+    }
 }

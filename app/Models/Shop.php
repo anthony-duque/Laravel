@@ -57,4 +57,9 @@ class Shop extends Model
         return $this->hasMany(Employee::class);
     }
 
+    public function dumpRecords() : HasMany
+    {
+        return $this->hasMany(ExtractFileDump::class);
+    }
+
 }

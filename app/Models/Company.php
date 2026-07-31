@@ -55,4 +55,10 @@ class Company extends Model
     {
         return $this->hasMany(Shop::class);
     }
+
+    public function dumpRecords() : HasMany
+    {
+        return $this->hasMany(ExtractFileDump::class);
+    }
+
 }
