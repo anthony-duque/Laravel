@@ -52,4 +52,9 @@ class Shop extends Model
         return $this->hasMany(Vendor::class);
     }
 
+    public function employees() : HasMany
+    {
+        return $this->hasMany(Employee::class);
+    }
+
 }

@@ -7,10 +7,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Employee
- * 
+ *
  * @property int $id
  * @property string $user_name
  * @property string|null $first_name
@@ -48,4 +49,9 @@ class Employee extends Model
 		'notif_preference',
 		'shop_id'
 	];
+
+    public function shop() : BelongsTo
+    {
+        return $this->belongsTo(Shop::class);
+    }
 }
