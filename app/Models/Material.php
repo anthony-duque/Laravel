@@ -7,10 +7,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class Material
- * 
+ *
  * @property int $id
  * @property string $part_number
  * @property string|null $description
@@ -18,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $material_type
  * @property int|null $reorder_quantity
  * @property string|null $brand
- * 
+ *
  *
  * @package App\Models
  */
@@ -40,8 +41,9 @@ class Material extends Model
 		'brand'
 	];
 
-	public function material_type()
+	public function material_type() : BelongsTo
 	{
-		return $this->belongsTo(MaterialType::class, 'material_type', 'material_type');
+		return $this->belongsTo(MaterialType::class);
 	}
+
 }
