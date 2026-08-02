@@ -62,4 +62,9 @@ class Shop extends Model
         return $this->hasMany(ExtractFileDump::class);
     }
 
+    public function stageHeadings() : HasMany
+    {
+        return $this->hasMany(StageHeading::class);
+    }
+
 }

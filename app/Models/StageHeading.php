@@ -7,10 +7,11 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * Class StageHeading
- * 
+ *
  * @property int $id
  * @property string $description
  * @property int $sequence_number
@@ -33,4 +34,9 @@ class StageHeading extends Model
 		'sequence_number',
 		'shop_id'
 	];
+
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class);
+    }
 }
