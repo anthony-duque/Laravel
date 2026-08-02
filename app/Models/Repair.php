@@ -7,11 +7,16 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Awobaz\Compoships\Compoships;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+
 
 /**
  * Class Repair
- * 
+ *
  * @property int $id
  * @property string $ro_number
  * @property string $owner
@@ -58,4 +63,16 @@ class Repair extends Model
 		'insurance',
 		'vin'
 	];
+
+    use Compoships;
+
+    public function partsStatus()
+    {
+        return $this->hasMany(PartsStatus::class, ['shop_id', 'ro_number'], ['shop_id', 'ro_number']);
+    }
+
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class, 'shop_id');
+    }
 }

@@ -7,11 +7,15 @@
 namespace App\Models;
 
 use Carbon\Carbon;
+use Awobaz\Compoships\Compoships;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 /**
  * Class PartsStatus
- * 
+ *
  * @property int $id
  * @property string|null $part_number
  * @property string|null $part_description
@@ -72,4 +76,11 @@ class PartsStatus extends Model
 		'repair_code',
 		'part_price'
 	];
+
+    use Compoships;
+
+    public function repair(): BelongsTo
+    {
+        return $this->belongsTo(Repair::class, ['shop_id', 'ro_number'], ['shop_id', 'ro_number']);
+    }
 }
