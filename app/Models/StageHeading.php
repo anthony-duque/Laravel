@@ -6,6 +6,8 @@
 
 namespace App\Models;
 
+use Awobaz\Compoships\Compoships;
+
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -39,4 +41,13 @@ class StageHeading extends Model
     {
         return $this->belongsTo(Shop::class);
     }
+
+    public function carStages()
+    {
+        return $this->hasMany(CarStage::class,
+                    ['shop_id', 'sequence_number'],
+                    ['shop_id', 'sequence_number']);
+
+    }
+
 }

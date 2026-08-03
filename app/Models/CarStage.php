@@ -6,11 +6,15 @@
 
 namespace App\Models;
 
+use Awobaz\Compoships\Compoships;
+
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+
 
 /**
  * Class CarStage
- * 
+ *
  * @property int $id
  * @property string $ro_number
  * @property int $shop_id
@@ -33,4 +37,17 @@ class CarStage extends Model
 		'shop_id',
 		'sequence_number'
 	];
+
+    public function shop(): BelongsTo
+    {
+        return $this->belongsTo(Shop::class);
+    }
+
+    public function stageHeading(): BelongsTo
+    {
+        return $this->belongsTo(StageHeading::class,
+                                ['shop_id', 'sequence_number'],
+                                ['shop_id', 'sequence_number']);
+    }
+
 }

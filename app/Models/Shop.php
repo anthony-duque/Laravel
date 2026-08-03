@@ -67,4 +67,9 @@ class Shop extends Model
         return $this->hasMany(StageHeading::class);
     }
 
+    public function carStages() : HasMany
+    {
+        return $this->hasMany(CarStage::class);
+    }
+
 }
