@@ -24,6 +24,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class CarStage extends Model
 {
+    use Compoships;
+
 	protected $table = 'car_stage';
 	public $timestamps = false;
 

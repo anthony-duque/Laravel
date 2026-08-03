@@ -10,6 +10,7 @@ use Awobaz\Compoships\Compoships;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class StageHeading
@@ -23,6 +24,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class StageHeading extends Model
 {
+    use Compoships;
+
 	protected $table = 'stage_headings';
 	public $timestamps = false;
 
@@ -37,17 +40,16 @@ class StageHeading extends Model
 		'shop_id'
 	];
 
-    public function shop()
+    public function shop() : BelongsTo
     {
         return $this->belongsTo(Shop::class);
     }
 
-    public function carStages()
+    public function carStages() : HasMany
     {
         return $this->hasMany(CarStage::class,
                     ['shop_id', 'sequence_number'],
                     ['shop_id', 'sequence_number']);
-
     }
 
 }
